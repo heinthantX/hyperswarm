@@ -353,11 +353,6 @@ kademlia-routing-table@^1.0.1:
   resolved "https://registry.yarnpkg.com/kademlia-routing-table/-/kademlia-routing-table-1.0.1.tgz#6f18416f612e885a8d4df128f04c490a90d772f6"
   integrity sha512-dKk19sC3/+kWhBIvOKCthxVV+JH0NrswSBq4sA4eOkkPMqQM1rRuOWte1WSKXeP8r9Nx4NuiH2gny3lMddJTpw==
 
-lexicographic-integer@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/lexicographic-integer/-/lexicographic-integer-1.1.0.tgz#52ca6d998a572e6322b515f5b80e396c6043e9b8"
-  integrity sha512-MQCrf1gG31DJSNQDiIfgk7CQVlXkO6xC+DFGExs5WQWlxWSSAroH5k/UrKrS6LThHDHBoc3X1pNoYHDKOCPWRQ==
-
 localdrive@^1.11.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/localdrive/-/localdrive-1.11.0.tgz#126ef9fe93c7a57a80ab361d04401037824c61bf"
@@ -368,11 +363,6 @@ localdrive@^1.11.0:
     mutexify "^1.4.0"
     streamx "^2.12.5"
     unix-path-resolve "^1.0.2"
-
-minimist@^1.2.8:
-  version "1.2.8"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.8.tgz#c1a464e7693302e082a075cee0c057741ac4772c"
-  integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
 
 mirror-drive@^1.2.0:
   version "1.3.0"

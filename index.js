@@ -20,7 +20,6 @@ const index = store.get({ name: 'index' });
 await index.ready();
 const listeningCores = [];
 for await (const value of index.createReadStream()) {
-  console.log(value);
   const core = store.get({ key: value });
   await core.ready();
   swarm.join(core.discoveryKey);
