@@ -11,7 +11,23 @@ if (!file) throw new Error('no file name specified in arg');
 
 const store = new Corestore('./data_' + file);
 swarm.on('connection', (conn, info) => {
-  console.log('connection');
+  console.log('connection', conn, info);
+  conn.on('data', async (data) => {
+    const keyRegex = /key: (.{64})/;
+    const match = keyRegex.exec(data.toString('utf-8'));
+    console.log(match);
+    if (match?.[1]) {
+      console.log('here is match: ' + match[1]);
+      const core = store.get({ key: match[1] });
+      await core.ready();
+      base.addInput(core);
+      index.append(core.key);
+      swarm.join(core.discoveryKey);
+      return;
+    }
+  });
+  console.log('key: ' + userCore.key.toString());
+  conn.write(`key: ${userCore.key.toString('hex')}`);
   store.replicate(conn);
 });
 
@@ -49,7 +65,6 @@ await swarm.flush().then(() => {
 process.stdin.on('data', async (data) => {
   const keyRegex = /key: (.{64})/;
   const match = keyRegex.exec(data);
-  console.log(match);
   if (match?.[1]) {
     const core = store.get({ key: match[1] });
     await core.ready();
